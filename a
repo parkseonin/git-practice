@@ -1,0 +1,22 @@
+pipeline 
+A pipeline is a sequence of one or more commands separated by one of the control operators ‘|’ or ‘|&’.
+standard output
+Every Unix-based operating system has a concept of “a default place for output to go”. Since that phrase is a mouthful, everyone calls it “standard output”, or “stdout”, pronounced standard out. Your shell (probably bash or zsh) is constantly watching that default output place. When your shell sees new output there, it prints it out on the screen so that you, the human, can see it. Otherwise echo hello would send “hello” to that default place and it would stay there forever.
+standard error
+Standard error (“stderr”) is like standard output and standard input, but it’s the place where error messages go. To see some stderr output, try catting a file that doesn’t exist:
+$ cat does-not-exist | sed 's/No such/ROBOT SMASH/'
+cat: does-not-exist: No such file or directory
+redirecting output
+By default, stdout and stderr are printed to your terminal – that’s why you can see them at all. But we can redirect that output to a file using the > operator:
+$ echo hello
+hello
+$ echo hello > new-file
+$ cat new-file
+hello
+Backslah can be used to ignore line change in command (“enter”),
+to enter a long command in multiple lines.
+
+file permission
+On a Linux system, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program).
+
+In the diagram below, we see how the first portion of the listing is interpreted. It consists of a character indicating the file type, followed by three sets of three characters that convey the reading, writing and execution permission for the owner, group, and everybody else.
